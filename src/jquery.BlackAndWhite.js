@@ -318,7 +318,9 @@
             if ($img.data('_b&w')) {
               return;
             }
-            // if this image is not loaded yet
+			//If wrapper is blank
+			if ($img == undefined || $img[0]==undefined) return;
+            // if this image is not loaded yet			
             if (!_isImageLoaded($img[0])) {
               $img.on('load', function () {
                 if ($img.data('_b&w_loaded') || !$img[0].complete) {
